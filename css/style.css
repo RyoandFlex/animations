@@ -1,4 +1,4 @@
-* {
+*{
   margin: 0;
   box-sizing: border-box;
 }
@@ -10,7 +10,7 @@
 }
 
 body {
-  font-family: "Rousseau", "futura bold", "arial", "sans-serif";
+  font-family: "futura bold", "arial", "sans-serif";
   width: 100%;
 }
 
@@ -31,7 +31,7 @@ body {
   text-decoration: none;
   font-size: 24px;
   font-weight: bolder;
-  font-family: "Crash Number", "futura bold", "arial", "sans-serif";
+  font-family: "futura bold", "arial", "sans-serif";
 }
 
 .menu a:hover {
@@ -56,7 +56,7 @@ body {
   text-transform: uppercase;
 }
 
-/* Les icônes de Font Awesome */
+/*--- ANIMATION --> "heartbeat" ---*/
 .fas {
   font-size: xx-large;
 	color: #e00;
@@ -67,6 +67,7 @@ body {
 @keyframes beat{
 	to { transform: scale(1.1); }
 }
+/*---------------------------------*/
 
 .far {
   width: 200vw;
@@ -74,7 +75,7 @@ body {
   padding-bottom: 10vw;
 }
 
-/* Footer sticky */
+/* Footer */
 footer {
   display: flex;
   position: fixed;
@@ -100,3 +101,47 @@ h1 {
   font-size: 100px;
   max-width: 80%;
 }
+
+div>h1 {
+  position: absolute;
+  left: 45%;
+  top: 45%;
+  font-size: 12em;
+}
+
+/*--------- ANIMATION --> "shadow_title" -------------*/
+#title {
+  display: inline-block;
+  color: black;
+  font-size: 12em; 
+  position: absolute;
+  left: 20%;
+  top: 30%;
+  text-shadow: .03em .03em 0 #BBBBBB;
+  }
+  #title:after {
+    content: attr(data-shadow);
+    position: absolute;
+    top: .06em; left: .06em;
+    z-index: -1;
+    text-shadow: none;
+    background-image:
+      linear-gradient(
+        45deg,
+        transparent 45%,
+      black 45%,
+      black 55%,
+        transparent 0
+        );
+    background-size: .05em .05em;
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+  
+    animation: shad-anim 15s linear infinite;
+    }
+
+@keyframes shad-anim {
+  0% {background-position: 0 0}
+  0% {background-position: 100% -100%}
+  }
+  /* --------------------------------------------------*/
