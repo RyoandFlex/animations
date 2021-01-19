@@ -58,7 +58,7 @@ body {
 }
 
 /*--- ANIMATION --> "heartbeat" ---*/
-.fas {
+.menu .fas {
   font-size: xx-large;
   color: #e00;
   animation: beat .25s infinite alternate;
@@ -87,11 +87,10 @@ footer {
 }
 
 section {
-  width: 100%;
-  margin-top: 18%;
-  display: flex;
-  justify-content: center;
-  text-align: center;
+  width: 50vw;
+  height: 50vh;
+  position: relative;
+  padding: 20% 25%;
 }
 
 h1 {
@@ -202,12 +201,13 @@ div>h1 {
 }
 
 @keyframes up {
-  0%{ 
-      top: 19vw;
+  0% {
+    top: 19vw;
   }
-  100%{
-      top: 0vw;
-  }  
+
+  100% {
+    top: 0vw;
+  }
 }
 
 /* Exercice 3 */
@@ -231,16 +231,19 @@ div>h1 {
 
 @keyframes loading {
   0% {
-      background-color: white;
+    background-color: white;
   }
+
   20% {
-      background-color: white;
+    background-color: white;
   }
+
   80% {
-      background-color: black;
+    background-color: black;
   }
+
   100% {
-      background-color: black;
+    background-color: black;
   }
 }
 
@@ -254,7 +257,7 @@ div>h1 {
   top: 25%;
 }
 
-.cubeRace{
+.cubeRace {
   width: 5vw;
   height: 5vw;
   position: absolute;
@@ -272,24 +275,28 @@ div>h1 {
   color: #F4A950;
   z-index: 5;
 }
+
 #cubeRace2 {
   background-color: #D2302C;
   color: #F7F7F9;
   animation-delay: 2s;
   z-index: 4;
 }
+
 #cubeRace3 {
   background-color: #317773;
   color: #E2D1F9;
   animation-delay: 4s;
   z-index: 3;
 }
+
 #cubeRace4 {
   background-color: #3B195B;
   color: #FEF747;
   animation-delay: 6s;
   z-index: 2;
 }
+
 #cubeRace5 {
   background-color: #FFE8F5;
   color: #CB02FF;
@@ -298,34 +305,149 @@ div>h1 {
 }
 
 @keyframes race {
-  0%{
-      top: 0%;
-      left: 0%;
-      transform: rotate(0deg);
-      animation-timing-function: ease-in-out;
+  0% {
+    top: 0%;
+    left: 0%;
+    transform: rotate(0deg);
+    animation-timing-function: ease-in-out;
   }
-  25%{
-      top: 0%;
-      left: 82%;
-      transform: rotate(-180deg);
-      animation-timing-function: linear;
+
+  25% {
+    top: 0%;
+    left: 82%;
+    transform: rotate(-180deg);
+    animation-timing-function: linear;
   }
-  50%{
-      top: 82%;
-      left: 82%;
-      transform: rotate(-360deg);
-      animation-timing-function: ease-in-out;
+
+  50% {
+    top: 82%;
+    left: 82%;
+    transform: rotate(-360deg);
+    animation-timing-function: ease-in-out;
   }
-  75%{
-      top: 82%;
-      left: 0%;
-      transform: rotate( -540deg);
-      animation-timing-function: linear;
+
+  75% {
+    top: 82%;
+    left: 0%;
+    transform: rotate(-540deg);
+    animation-timing-function: linear;
   }
-  100%{
-      top: 0%;
-      left: 0%;
-      transform: rotate(-720deg);
+
+  100% {
+    top: 0%;
+    left: 0%;
+    transform: rotate(-720deg);
+  }
+}
+
+/* Exercice 5 */
+#container2 {
+  position: relative;
+  height: 60vh;
+  width: 60vw;
+  left: -10%;
+  top: 10%;
+  margin: auto;
+  perspective: 1000px;
+  text-align: center;
+}
+
+#carousel {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  transform-style: preserve-3d;
+  animation: rotateCarousel 10s linear infinite;
+}
+
+.window {
+  position: absolute;
+  width: 20vw;
+  transform-style: preserve-3d;
+  animation: spin 10s linear infinite;
+}
+
+#window1,
+#window2,
+#window3,
+#window4,
+#window5,
+#window6 {
+  position: absolute;
+  font-size: 150px;
+  text-shadow: -2px 0 #BD942B, 0 2px #BD942B, 2px 0 #BD942B, 0 -2px #BD942B;
+}
+
+#window1 {
+  color: #8FCFC1;
+  transform: translateZ(180px);
+}
+
+#window2 {
+  color: #F9A2C5;
+  transform: rotateY(60deg) translateZ(180px);
+}
+
+#window3 {
+  color: #F3BA8D;
+  transform: rotateY(120deg) translateZ(180px);
+}
+
+#window4 {
+  color: #8FCFC1;
+  transform: rotateY(180deg) translateZ(180px);
+}
+
+#window5 {
+  color: #F9A2C5;
+  transform: rotateY(240deg) translateZ(180px);
+}
+
+#window6 {
+  color: #F3BA8D;
+  transform: rotateY(300deg) translateZ(180px);
+}
+
+
+@keyframes rotateCarousel {
+  0% {
+    top: 30%;
+    left: 10%;
+    transform: rotateX(0deg);
+  }
+
+  25% {
+    top: 60%;
+    left: 30%;
+    transform: rotateX(180deg);
+  }
+
+  50% {
+    top: 10%;
+    left: 50%;
+    transform: rotateX(360deg);
+  }
+
+  75% {
+    top: 50%;
+    left: 90%;
+    transform: rotateX(180deg);
+  }
+
+  100% {
+    top: 80%;
+    left: 60%;
+    transform: rotateX(0deg);
+  }
+}
+
+@keyframes spin {
+  from {
+    transform: rotateY(0deg);
+  }
+
+  to {
+    transform: rotateY(-360deg);
   }
 }
 
@@ -335,6 +457,7 @@ div>h1 {
 #ex6 {
   height: 8vh;
 }
+
 #ex6:hover {
   margin-left: -2vw;
   margin-top: -2vw;
