@@ -1,4 +1,4 @@
-*{
+* {
   margin: 0;
   box-sizing: border-box;
 }
@@ -59,14 +59,17 @@ body {
 /*--- ANIMATION --> "heartbeat" ---*/
 .fas {
   font-size: xx-large;
-	color: #e00;
-	animation: beat .25s infinite alternate;
-	transform-origin: center;
+  color: #e00;
+  animation: beat .25s infinite alternate;
+  transform-origin: center;
 }
 
-@keyframes beat{
-	to { transform: scale(1.1); }
+@keyframes beat {
+  to {
+    transform: scale(1.1);
+  }
 }
+
 /*---------------------------------*/
 
 .far {
@@ -113,35 +116,101 @@ div>h1 {
 #title {
   display: inline-block;
   color: black;
-  font-size: 12em; 
+  font-size: 12em;
   position: absolute;
   left: 20%;
   top: 30%;
   text-shadow: .03em .03em 0 #BBBBBB;
-  }
-  #title:after {
-    content: attr(data-shadow);
-    position: absolute;
-    top: .06em; left: .06em;
-    z-index: -1;
-    text-shadow: none;
-    background-image:
-      linear-gradient(
-        45deg,
-        transparent 45%,
+}
+
+#title:after {
+  content: attr(data-shadow);
+  position: absolute;
+  top: .06em;
+  left: .06em;
+  z-index: -1;
+  text-shadow: none;
+  background-image:
+    linear-gradient(45deg,
+      transparent 45%,
       black 45%,
       black 55%,
-        transparent 0
-        );
-    background-size: .05em .05em;
-    -webkit-background-clip: text;
-    -webkit-text-fill-color: transparent;
-  
-    animation: shad-anim 15s linear infinite;
-    }
+      transparent 0);
+  background-size: .05em .05em;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+
+  animation: shad-anim 15s linear infinite;
+}
 
 @keyframes shad-anim {
-  0% {background-position: 0 0}
-  0% {background-position: 100% -100%}
+  0% {
+    background-position: 0 0
   }
-  /* --------------------------------------------------*/
+
+  0% {
+    background-position: 100% -100%
+  }
+}
+
+/* --------------------------------------------------*/
+
+/* Exercice 1 */
+#cube {
+  width: 15vw;
+  height: 15vw;
+  border: 3px solid black;
+  position: absolute;
+  margin: auto;
+  animation-name: rotate;
+  animation-duration: 8s;
+  animation-iteration-count: infinite;
+  animation-timing-function: linear;
+}
+
+@keyframes rotate {
+  0% {
+    transform: rotate(0deg);
+    background-color: black;
+  }
+
+  50% {
+    transform: rotate(540deg);
+    background-color: #BBBBBB;
+  }
+
+  100% {
+    transform: rotate(1080deg);
+    background-color: black;
+  }
+}
+
+/* Exercice 3 */
+#container {
+  position: absolute;
+  bottom: 18%;
+  background-color: white;
+  margin: auto ;
+  border: 1vw solid black;
+  height: 56vh;
+  width: 12vw;
+}
+#ball {
+  background-image: url(../images/basketball.png);
+  background-size: cover;
+  position: relative;
+  height: 10vw;
+  width: 10vw;
+  border-radius: 50%;
+  animation: up 2s infinite alternate;
+}
+
+
+@keyframes up {
+  0%{ 
+      top: 19vw;
+  }
+  100%{
+      top: 0vw;
+  }  
+}
